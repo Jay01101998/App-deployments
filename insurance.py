@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings
 warnings.filterwarnings('ignore')
@@ -14,7 +14,7 @@ menu=st.sidebar.radio("Menu",["Data Description","Insurance Prediction"])
 if menu=="Data Description":
     st.title("Data Description")
     st.header("Medical Insurance Prediction")
-    #st.image("insurance.jpeg")
+    st.image("insurance.jpeg")
     df=pd.read_csv(r'C:\Users\HP\Downloads\expenses.csv')
     st.write("The data contents:")
     st.table(df.head())
