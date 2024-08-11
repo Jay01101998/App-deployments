@@ -18,24 +18,8 @@ import time
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 
-
-def categorical_visualization(col):
-    plt.subplot(1,2,1)
-    sns.countplot(x=col,data=df)
-    plt.subplot(1,2,2)
-    df[col].value_counts().plot(kind='pie',autopct='%0.2f%%')
-    plt.tight_layout()
-    plt.show()
-def numerical_visualization(col):
-    plt.subplot(1,2,1)
-    sns.kdeplot(x=col,data=df)
-    plt.grid()
-    plt.subplot(1,2,2)
-    sns.boxplot(x=col,data=df)
-    plt.tight_layout()
-    plt.show()
-
-df=pd.read_csv(r"C:\Users\HP\Desktop\self-projects\credit_train.csv")
+df=pd.read_csv(r"https://github.com/Jay01101998/App-deployments/blob/main/credit_train.csv")
+#df=pd.read_csv(r"C:\Users\HP\Desktop\self-projects\credit_train.csv")
 
 st.sidebar.title("Navigating the App")
 options= st.sidebar.radio("INDEX",["Data Study","Modelling and Prediction"])
