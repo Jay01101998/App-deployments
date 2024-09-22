@@ -63,21 +63,12 @@ if drug:
       review=df[df['Condition']==condition]['Review']
       st.table(review.head())
       
-      # clean=st.button("Clean the text")
-      # if clean:
-      #    #st.write("Cleaning the text")
-      #    with st.spinner(text="Cleaning the text"):
-      #       time.sleep(5)
-
-      #    review=review.apply(preprocessing_text)
-
-         #st.table(review.head())
+     
       select=st.selectbox("Select the review",review.values)
       avg_score=[]
       if select:
          res=sia.polarity_scores(select)
-         # st.write("The average compound sentiment compound score is:")
-         # st.subheader(res['compound'])
+         
          st.bar_chart(res)
       
       for i in review:
@@ -88,18 +79,4 @@ if drug:
       st.sidebar.header(np.mean(avg_score))
          
 
-      # tf=TfidfVectorizer()
-      # vec=tf.fit_transform(review).toarray()
-
-         #st.button(label="Generate Components")
-         # with st.spinner(text="Generating the components"):
-         #       time.sleep(5)
-
-         # comp=2
-         # pca=PCA(n_components=comp,random_state=42)
-         # x_pca=pd.DataFrame(pca.fit_transform(vec),columns=['PC'+str(i) for i in range(1,comp+1)])
-         # st.metric(label="Correlation",value=(x_pca['PC1'].corr(x_pca['PC2'])))
-
-         # st.write(x_pca.head())
-
-         # st.scatter_chart(x_pca[['PC1','PC2']])
+      
